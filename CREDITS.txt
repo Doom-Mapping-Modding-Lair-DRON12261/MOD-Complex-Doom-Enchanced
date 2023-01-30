@@ -13,6 +13,11 @@
 
 ================================================================================
 
+==========
+DRON12261: Author of Complex Doom Enchanced fork. Check v27c1 and ENCHANCED v1 
+		   in CHANGELOG.txt for more.
+==========
+
 ===============
 Xaser & Quasar: Arachnophyte (Cerebral Sentient) sprites, I modified these by
 				adding the dual chainguns and BFG cannon.
