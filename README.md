@@ -6,6 +6,12 @@
 
 ### ⚠️WARNING!⚠️The fork is still in development, so it may behave erratically at times. Keep this in mind.
 
+## Download:
+- [Complex Doom Enchanced v1](https://github.com/Doom-Mapping-Modding-Lair-DRON12261/MOD-Complex-Doom-Enchanced/releases/download/v1/Complex_Doom_Enchanced_v1.pk3)
+- [Russian Language patch for Zandronum](https://github.com/Doom-Mapping-Modding-Lair-DRON12261/MOD-Complex-Doom-Enchanced/releases/download/v1/CDE_v1_RUS_Patch_for_Zandronum.pk3)
+
+To run the patch, load it after the main mod and type in the console `language ru`.
+
 ## What this fork does:
 - [x] Added cvar Pistol Start Bonus(cd_pistolstartbonus) - at the start in pistol start mode, the player will also have 100 green armor, 3 ammo satchels and a certain number (set by cvar below) weapon upgrade boxes.
 - [x] Added cvar Pistol Start Bonus Upgrade Boxes Count(cd_pistolstartwubcount) - number of weapon upgrade boxes spawning in pistol start bonus mode.
