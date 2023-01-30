@@ -1,0 +1,370 @@
+//========================================
+// Changes from ENCHANCED v1 by DRON12261
+//========================================
+[EN]
+(+) Full refactoring of the project
+(+) Russian localization (including zandronum)
+(+) Changed the working of quick mines, grenades, and kicks - now they work with 
+	Any weapon, without the need to write a separate code for each weapon for 
+	quick action.
+(-) Because of the innovation above, the unique animations for throwing a 
+	mine/grenade or kick under each weapon are gone (at least until I figure out 
+	how to implement them in conjunction with that standalone QuickAction system)
+(+)	Now the grenade flies exactly in the crosshairs
+(+) Mines no longer explode on each other
+(+)	Mines no longer bounce off of actors
+(+) Mines now track their target much more steadily
+(+)	An upgrade for mines appeared: Stunning mines
+(+)	The animation of the first revolver pickup can now be skipped
+(+) The shotgun upgrade animation can now be skipped
+(+) The upgrade animation for the Assault Shotgun can now be skipped
+
+[RU]
+(+) Полный рефакторинг проекта
+(+) Русская локализация (включая zandronum)
+(+) Изменен принцип работы быстрых мины, гранаты, пинка - теперь они работают с 
+	любым оружием, без необходимости отдельного прописывания кода под каждое 
+	оружие для быстрых действий
+(-) Изза новвоведения выше пропали уникальные анимации для броска мины/гранаты 
+	или пинка под каждое оружие (по крайней мере до тех пор, пока я не придумаю,
+	как их реализовать совместно с той системой автономного QuickAction)
+(+)	Граната теперь летит точно в прицел
+(+) Мины больше не взрываются друг об друга
+(+)	Мины теперь не отлетают от акторов
+(+) Мины теперь гораздо стабильнее отслеживают свою цель
+(+)	Появился апгрейд для мин: стан-мины
+(+)	Анимация первого подбора револьвера теперь пропускаема
+(+) Анимация применения апгрейда для дробовика теперь пропускаема
+(+) Анимация применения апгрейда для штурмового дробовика теперь пропускаема
+
+
+//============================================
+// Changes from V27c1 UNOFFICIAL by DRON12261
+//============================================
+
+[EN]
+(-) Removed replacement for commander kin.
+(+) Added cvar Pistol Start Bonus(cd_pistolstartbonus) - at the start in pistol 
+	start mode, the player will also have 100 green armor, 3 ammo satchels and 
+	a certain number (set by cvar below) weapon upgrade boxes.
+(+) Added cvar Pistol Start Bonus Upgrade Boxes Count(cd_pistolstartwubcount) - 
+	number of weapon upgrade boxes spawning in pistol start bonus mode.
+(+) The system of weapon upgrade boxes has been reworked - now you can choose 
+	one of three modes through cvar Weapon Upgrades Style(cd_weaponupgradesstyle):
+	1) Old - A random upgrade just falls out of the box;
+	2) Checking the player's weapons - Only the weapons that the player has are 
+	dropped from the box.
+	3) Portable upgrades - A random upgrade just drops out of the box, but now 
+	it is a portable active inventory item.
+(+)	Also, now all gameplay cvars are saved in the config (I'm tired of re-plugging 
+	them after each restart).
+	
+[RU]
+(-) Убран заменитель для командер кина.
+(+) Добавлен квар Pistol Start Bonus(cd_pistolstartbonus) - на старте в режиме 
+	pistol start у игрока также будет 100 зеленой брони, 3 сумки с патронами и 
+	определенное кол-во(задается кваром ниже) ящиков улучшения оружия.
+(+) Добавлен квар Pistol Start Bonus Upgrade Boxes Count(cd_pistolstartwubcount) - 
+	количество спавнящихся ящиков улучшения оружия в режиме pistol start bonus.
+(+) Переработана система ящиков улучшения оружия - теперь через квар Weapon 
+	Upgrades Style(cd_weaponupgradesstyle) можно выбрать один из трех режимов:
+	1) Старый - Из ящика просто выпадает рандомный апгрейд;
+	2) Проверка оружия игрока - Из ящика выпадают улучшения только на те оружия, 
+	которые есть у игрока.
+	3) Переносные улучшения - Из ящика просто выпадает рандомный апгрейд, но теперь 
+	это переносимый активный предмет инвенторя.
+(+) Также теперь все геймплейные квары сохраняются в конфиг (мне надоело их после 
+	каждого перезапуска перевтыкать).
+
+//====================
+// Changes from V27b2
+//====================
+
+(+) Fixed an oversight on the SSG & QSG inspects. The animations couldnt be
+	cancelled with altfire, now they can.
+(+) Improved the QSG reload animations a bit more by adding some extra frames,
+	its a little bit less clunky now.
+(+) Tweaked Railgun zombie, at longer ranges it takes him longer to "aim".
+(+) Changed the player marine Rocket Launcher skin sprites.
+(+) Players can now use the Reload key. Altfire still works as before so this
+	change is optional. Again, this was requested for some time.
+(+) Players can now replace their armor with better armor. Before, when you were
+	holding say, 250 green armor, you couldnt pick up blue armor. Now you can.
+	This goes the same for green armor and if you are carrying 100+ starting
+	vest armor or even no armor (armor bonuses only) at all.
+(+) Tweaked Armor.SavePercent on the three major armor types, buffed them
+	slightly.
+(+) Added another CVAR, players can now toggle the weapon fire screen shake
+	effect by using "cd_disablescreenshake". 0 is default, shaking on and 1
+	disables it. It can be toggled in the Mod Setup menu or through console with
+	the command.
+(+) Players can now individually toggle the Effects Throttle during online play
+	instead of it being a forced serverside setting. Note to offline players, set
+	the global setting to offline in the Mod Setup menu if you want to use Effects
+	Throttling.
+(+) Added a CVAR to disable the Marauder spawning on zombies, "cd_nomarauder".
+	By default this is off so he will spawn as intended.
+(+) Added yet another CVAR, "cd_keeppistol". When enabled this allows players to
+	keep their Pistol when the Revolver upgrade is taken. Also, the Revolver is
+	its own weapon actor now instead of being integrated in the Pistol decorate.
+(+) Player crouch sprites now work.
+(+) Changed Weapon Upgrade Box a bit, you now have to actually press use to open
+	them. Made some new sprites for it too and it has a looping sound so its
+	easier to find amongst corpses.
+(+) Upgrades now have messages appear, telling players what weapons are needed
+	for whatever upgrade they touch also if they already own an upgrade.
+(+) Fixed ammo items moving around after they are picked up and respawn. However,
+	for this to work the item respawn DMFLAG MUST be enabled on whatever port you
+	are using, where as before it was not needed. Enable the item respawn DMFLAG
+	through the port and have the mods "cd_ammorespawn" CVAR set to 1.
+(+) Fixed the Radsuit moving around after it respawns.
+(+) Very slightly reduced the Terminator Minigun heat gain during firing.
+(+) Replaced the placeholder Quick Hands perk sprites. Also, the perk is now
+	known as Adrenaline. Gives the same effect (increased weapon switch speed),
+	I just renamed it to something more fitting.
+(+) Added a new perk, Scavenger. It allows players to get a bit more ammo from
+	all non-dropped ammo pickups. This doesnt include Grenade, Mine or Demon
+	ammo, though I can change this at any time. Also, both Backpacks are not
+	affected by this either.
+(+) Added another new perk, Toughness. Once grabbed it will give 10% resistance
+	to all damage taken.
+(+) Added yet another new perk, Restoration. It allows players to gain a little
+	extra health from Stimpacks, Medkits and Health Bonuses.
+(+) The way perks are gained is either a Annihilator or a Demolisher (tier 1
+	bosses) will drop a Perk Globe with 50% chance. The Globe is breakable by
+	damaging it and the perk it drops depends on which perk is shown when the
+	Globe is broken.
+(+) Perk indicators now show up on both HUDs when they are taken.
+(+) Added one last perk, Frenzy. When held it allows players to deal 10% extra
+	damage.
+(+) Fixed a multitude of minior issues and oversights thanks to WaTaKiD testing
+	stuff.
+
+//====================
+// Changes from V27b1
+//====================
+
+(+) Sped up BFG reload some more, it was still too slow.
+(+) Fixed player BFG10K projectile not using models when ThruPlayers CVAR was 
+	enabled.
+(+) Fixed an issue with the Plasma Rifle. After reloading or randomly when you
+	first fired the weapon online it would either desync and not use ammo despite
+	visually firing or fire normally but use ammo from both pools (the cell loaded
+	in the weapon and the main cell ammo stock).
+(+) Slightly nerfed the Hellfire Revenant once again, thing was still way too
+	strong. Both comet and lingering fire damage lowered.
+(+) Hellfire Revenant comets no longer weave.
+(+) Buffed the DTech Fiend. I gave it a flame dash attack. Whenever its target
+	reaches a certain range, it will run in place and then do a fast charge 
+	towards the player its on and standing the way of it will do monstrous damage.
+	It will also track the player but it can be easily baited to miss or knocked
+	out of it via pain stating. Also when it becomes enraged it will fire a burst
+	of DT mid lunge making running away from it slightly more dangerous. Buffed
+	its rate of fire on the DTR attack.
+(+) Fixed an oversight on the DTFiend, it healed less than the Spectre version.
+(+) All floorhugger attacks (Pyro/Bruiser Demon fire etc) no longer go over tall
+    walls or down high drops, instead they are only player step height.
+(+) Fixed a duplicate frame on the Forgotten One sprites and brightmaps.
+(+) Fixed a duplicate sprite name on the Black and Blue large blood pools.
+(+) Slightly sped up weapon empty states, especially the BFGs. Basically makes
+	reloading overall a bit less of an annoyance.
+(+) Tried once again to fix the Caco/Pain type deaths bug where they will float
+	on actors mid death instead of falling to the floor and splatting. Seems to
+	be fixed now but I thought this last time and it still happened.
+(+) Tagged all monsters, this should improve some addon support.
+(+) Changed how weapon upgrades are dropped. Instead of monsters dropping specific
+	weapon upgrades, they now drop a box that when touched will open and throw out
+	a random chance upgrade for any weapon.
+(+) Bomb Elemental now randomly drops the weapon upgrade box.
+(+) Terminator also randomly drops the upgrade box.
+(+) Terminator now has a high chance to drop the Railgun too.
+(+) Buffed grenade and mine throwing speed.
+(+) Fixed an issue with mines. Added SKYEXPLODE flag, mapsets that use skybox floors
+	(Ancient Aliens is an example) caused mines to be wasted as they would just
+	disappear.
+(+) Fixed a bug with the Railgun. If you tossed either a grenade or a mine while
+	the weapon was loaded it would jump to its empty state despite having ammo
+	loaded.
+(+) Replaced the placeholder weapon upgrade pickup sprites to more fitting things.
+(+) Overhauled the lazy Handgun upgrade. You now get a Revolver which replaces
+	the stock handgun once the upgrade is picked up. It has a slower RoF but it
+	is much stronger, more accurate and penetrates enemies.
+(+) Added visual indicators on both statbar and fullscreen HUDs for when weapons
+	are upgraded.
+(+) Revamped the Rocket Launcher upgrade. The multi rocket burst now seeks targets
+	on screen. Also the weapon gains a visual change on itself.
+(+) Fixed a bug with the RL upgrade. When multi rockets were cycled and the map
+	was changed through normal means of an exit, the cycled rockets didnt exist
+	anymore and the weapon would re-cycle on spawn in the very next map.
+(+) Buffed the Plasma Rifle overcharge upgrade. Projectile speed and accuracy 
+	increased, and slightly buffed the cooldown time.
+(+) Buffed the Summoner. Gains more HP gain from "draining", also gave it back
+	the ability to summon Arch Vile types.
+(+) Fixed a bug with the Summoner. It would randomly die whenever one of its
+	summons died.
+(+) Red Armor can now be fully "repaired" to 250 with regluar armor shards and 
+	inventory items.
+(+) Revamped the Minigun upgrade. Once the lightweight barrel upgrade is grabbed,
+	the weapon visually changes appearance, gains a rate of fire, damage and
+	accuracy boost along with the manual spinning. Also, I gave it a new firing
+	sound to further differentiate the two.
+(+) Changed how effects toggle works. Added new CVAR "cd_effectsthrottle" with 
+	three different modes. 0 is default, full normal effects will be shown. 1 
+	is reduced, as it is implied, all effects are reduced. 2 is vanilla mode, 
+	almost all effects will not be shown. Simply toggle it from the Mod Setup
+	menu from the ESC main menu or alternatively players can do it via console
+	with "cd_effectsthrottle 0/1/2". This means that Console Command has been 
+	removed as this has been requested for quite some time now. This also means 
+	the old vanilla mode CVAR/toggle option no longer exists.
+(+) Changed how specific effects spawn. For example, normally if you gibbed a 
+	zombie around a corner, no gibs or blood would spawn. Now it is also checked
+	via range, so full effects (as long as Vanilla mode throttle isnt enabled)
+	will spawn if players are within range, despite being out of sight when the
+	zombie is gibbed. This also applies to other effects.
+(+) Tweaked Devil Imp. Gave it a spread attack that it will do when close enough
+	similar to the Void Imp. Also buffed its tracer, it will no longer stop
+	tracking when dodged. Slightly nerfed the chargeball damage as it was too way
+	too high. I felt like it was lacking for a 3rd tier spawn.
+(+) Nerfed Famine tracer damage but increased projectile speed and the chance 
+	that it will seek.
+(+) Phase Imp buffed. Charged ball now seeks targets but stops after successfully
+	dodging it, also made it weave so it has a better chance of hitting players
+	with the shocks it emits when near it. I gave it a spread ball attack that 
+	it will do randomly when close enough, and it will cast lightning at another
+	set range that will do big damage to unsuspecting players. Like the Devil Imp,
+	felt it lacking for what tier spawn it is.
+(+) Gave the Magma Fiend a 3 ball spread attack as well as a seeker, it also has
+	a chance to combo into the flame breath after a lunge attack. Felt it was too
+	weak for a 3rd tier spawn.
+(+) Changed the Poison Elemental seeker projectiles to match that of the Defiler.
+	It will spit out two homing Poison Souls that cannot be shot but instead act
+	like normal projectiles, they will leave poison gas in their trail. I also
+	buffed the breath attack, it lasts longer.
+(+) Cyber Knight got its Assault Shotgun attack back, it will also randomly drop
+	the weapon with a reasonable chance.
+(+) Added a new item, the Megapack. It has a chance of randomly spawning on the
+	backpack. It gives a larger chunk of ammo, of all types over the regular BP.
+(+) Slight changes to both HUDs. Moved the powerup timers to the upper left on the
+	fullscreen HUD, this should prevent any issues on lower aspect ratios. And I
+	moved the inventory bar to the bottom on the statbar.
+(+) Fixed an oversight on the BFG zombie drop. Players couldnt pick it up cause
+	I set both ammo types to give 0.
+(+) Fixed a bug with the Rocket Launcher. If the weapon had ammo loaded and you
+	had say 1 rocket ammo left in the main pool, the reload would give a max 7
+	ammo loaded even though you didnt have enough for it.
+(+) Fixed the Mancubus type spread patterns so they can be consistently dodged
+	at medium to closeish range instead of being almost totally random.
+(+) Fixed looping sounds on monsters that have them (Hellfire Revenent etc).
+	Instead of the fire effect spawners playing the sounds each time they are
+	spawned (a lot), the sounds are played on loop on the monsters themselves as
+	soon as they spawn.
+(+) Buffed the Barbatos. It will now fire 12 comets per salvo instead of 8. Its
+	gas lingers and does more damage. Gave it a "shotgun" comet attack, fires
+	off a cluster of small, fast moving projectiles three times. Gave it a fat
+	bomb attack that does massive direct damage and fills the area it explodes 
+	in with gas, basically a mini nuke. Also, when it takes pain it will randomly,
+	aggressively charge forward and attack.
+(+) Buffed the Hell Duke. The rage spike AoE deals more damage, covers a wider
+	area and comes in more gradually. The Duke can be damaged during it but will
+	take no pain. The attack will only trigger if within a certain range. Also
+	it uses stronger projectiles for its common attacks and can combo into single
+	comet spam. Slightly buffed its movement speed.
+(+) Removed the invulnerable state from the Hell Duke, instead gave it no pain
+	during its heal.
+(+) Buffed the Bomb Elemental. Its death is more dangerous now as it leaves
+	lingering fire. Gave it a three seeker burst instead of just the one. When it
+	rages and suicide rushes, it now tracks more aggressively.
+(+) Messed around with mines a bit, kinda got them to a point where they will not
+	blow up in your own face when tossing them from a short distance right up
+	against walls/doors. They will still explode when players attempt to stack
+	them, this is intentional as it can be very easily abused.
+(+) Added the Shotgun upgrade. The weapon gains a box magazine that holds more
+	shells and the cocking animation changes, it is now cocked from the hip which
+	increases its rate of fire. Also the weapon fires off a bunch of bouncing
+	shrapnel, 4 shards per shot. Gave it a new firing sound too.
+(+) Buffed the Assault Rifle upgrade. It now uses incendiary grenades and I
+	increased the projectile speed.
+(+) Made a couple more frames to the Assault Rifle underbarrel grenade upgrade
+	reload animation.
+(+) Tweaked the Assault Shotgun upgrade. On top of the drum magazine the it gains
+	a foregrip, this allows the weapon to have a greater rate of fire but at the
+	expense of accuracy. Kinda makes no sense but I gotta balance it somehow so
+	it doesn't just crush the other three shotguns. Made some extra frames on the
+	reload animation. Gave it a beefier firing sound once upgraded.
+(+) Changed how weapon switching works again. Now whenever a brand new weapon is
+	picked up and then equipped, a one time animation will play and then weapons
+	will raise from an angle like they used to do before I made the select anims
+	a few versions ago. Like, Doomguy constantly putting a magazine in the Pistol
+	or cocking the Shotgun every time the weapon is selected, thats now gone. He
+	will only "play" with his weapons during the first time they are selected,
+	and the animation is fully cancelable right after raising via firing,
+	grenade/mine throwing, quick melee or weapon switch. Also this is still WiP
+	as theres so many to do. So far slots 1 through to 3 are done, including
+	upgrades.
+(+) Whenever upgrades are picked up, a one time animation will play on the weapon
+	you grabbed the upgrade for and only when the weapon is already equipped or
+	when you actually select the weapon. A weapon switch will not be forced on
+	upgrade pickup, however, this animation cannot be cancelled. If it proves to
+	be troublesome (like, during hordes or traps) I can always change this.
+(+) Fixed the issue of keys not triggering traps or other events when grabbed in
+	specific maps.
+(+) Fixed a bug on the Assault Shotgun. If you tried to throw grenades or mines
+	while having none during a reload, it would cause the weapon to go to the 
+	pull charging handle animation everytime, even with ammo loaded in the weapon.
+(+) Added the Marauder. He has a chance of spawning across all three zombie types.
+	I gave him pretty much all his attacks except from his shield (invulnerable)
+	gimmick. Having him spawn on zombie tiers I feel like giving him that also
+	would be too much. I can always give him the ability later if I feel like it.
+	He will drop the weapon upgrade box for zombie types on death with a
+	reasonable chance. He is pretty much based on the Battlemode version currently.
+(+) Weapon switching speed increased.
+(+) Tweaked 4th Zombie tier spawn chances.
+(+) Added the Hand Grenade upgrade, incendiary grenades.
+(+) Tweaked firing animations on all weapons to make them smoother.
+(+) Added the 4th tier Caco spawn, the Abaddon.
+(+) Added slime death HUD mug state.
+(+) Slightly buffed Zombie HPs.
+(+) Buffed Zombie attack reaction times to match Vanilla.
+(+) Buffed 4th tier Zombie strafe chance.
+(+) Replaced the Doom64 Arachnotron sprites to the regular Doom style. It also
+	doesnt fully behave like the D64 Arachno anymore either, keeps its dual
+	projectiles but will constantly fire them in a stream like the vanilla Arach.
+(+) Fixed an oversight when using the Demon Rune. If players had Berserk or
+	Demonic Fury active, it would carry over into the demon form.
+(+) Removed weapoon slot 8 (MP40 easter egg wep) indicator from the fullscreen HUD
+	and moved numbers and selection indicator further to the right to make it more
+	uniform with the ammo counters.
+(+) Buffed Cacomental, it will now spew damaging shocks during its bite charge.
+(+) Buffed the Terminator (monster) explosive chaingun rate of fire.
+(+) Buffed the Baby & Cerebral Sentient explosive chaingun rate of fire.
+(+) Buffed the Rictus kamikaze chance.
+(+) Removed the recoil effect from the QSG and DTBFG10K.
+(+) Changed weapon bobbing style.
+(+) Pistol tap firing is more responsive.
+(+) Fixed the Demonic Fury Berserk scream sound playing while dead.
+(+) Rocket Zombie now uses the correct zombie sounds.
+(+) Baby Demolisher now has a chance to drop the Minigun.
+(+) Slightly nerfed the Grenade Launcher upgrade.
+(+) Also slightly nerfed the Terminator demon form cluster grenade.
+(+) Slightly nerfed the Watcher & Cacomental tracer turn aggressiveness.
+(+) Fixed weapon firing sounds getting cutoff whenever the empty click sound
+	played.
+(+) Added Quake Ranger "skin" sounds.
+(+) Added a nightmare font graphic for the "highest" difficulty choice.
+(+) Added more brightmaps on weapons that are still missing them.
+(+) Polished up some existing weapon brightmaps.
+(+) Added a startup splash.
+(+) Bunch of tweaks to random effects.
+(+) Polished a bunch of existing sprites.
+(+) Changed some existing sprites.
+(+) Replaced some existing sounds.
+
+Probably some other things I did that are not listed.
+
+There is a known bug I havent managed to fix yet. Sometimes during online play
+the F12 cam will bug out if youre spectating a player with an upgraded weapon,
+the player will have a weapon upgraded and will work as intended on their side,
+but the spectator cam will show that they have not. I assume Zandronum is causing
+a desync issue from the amount of jump states I have in weapons, or I have messed
+up somewhere and I am not seeing it. Either way, I will continue to play around
+with it and hopefully come up with a solution in future updates.
